@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Interactive business analysis portfolio project exploring e-commerce revenue, retention, and customer experience."
+    />
+    <title>Northstar Commerce | Retention Analysis</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#overview" aria-label="Northstar Commerce analysis home">
+        <span class="brand-mark">N</span>
+        <span>
+          <strong>Northstar Commerce</strong>
+          <small>Business analysis case study</small>
+        </span>
+      </a>
+      <nav>
+        <a href="#overview">Overview</a>
+        <a href="#analysis">Analysis</a>
+        <a href="#recommendations">Recommendations</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="overview">
+        <div>
+          <p class="eyebrow">Portfolio project · Simulated data</p>
+          <h1>Customer Retention<br /><span>Performance Review</span></h1>
+          <p class="hero-copy">
+            A business analysis of revenue growth, repeat purchasing, delivery
+            experience, and customer support patterns for a fictional
+            e-commerce company.
+          </p>
+        </div>
+        <aside class="hero-note">
+          <p>Executive question</p>
+          <strong>Why did revenue growth slow in Q4 despite continued customer acquisition?</strong>
+          <span>Use the filters below to explore the evidence.</span>
+        </aside>
+      </section>
+
+      <section class="control-panel" aria-label="Dashboard filters">
+        <div>
+          <label for="region">Region</label>
+          <select id="region">
+            <option value="All">All regions</option>
+            <option value="West">West</option>
+            <option value="Central">Central</option>
+            <option value="East">East</option>
+          </select>
+        </div>
+        <div>
+          <label for="channel">Acquisition channel</label>
+          <select id="channel">
+            <option value="All">All channels</option>
+            <option value="Organic">Organic</option>
+            <option value="Paid Search">Paid Search</option>
+            <option value="Social">Social</option>
+          </select>
+        </div>
+        <div>
+          <label for="segment">Customer segment</label>
+          <select id="segment">
+            <option value="All">All segments</option>
+            <option value="New">New customers</option>
+            <option value="Returning">Returning customers</option>
+          </select>
+        </div>
+        <button id="reset-filters" type="button">Reset filters</button>
+      </section>
+
+      <section class="kpi-grid" aria-label="Key performance indicators">
+        <article class="kpi-card">
+          <p>Revenue</p>
+          <strong id="revenue-value">$0</strong>
+          <span id="revenue-change">Loading</span>
+        </article>
+        <article class="kpi-card">
+          <p>Orders</p>
+          <strong id="orders-value">0</strong>
+          <span id="orders-change">Loading</span>
+        </article>
+        <article class="kpi-card">
+          <p>Repeat purchase rate</p>
+          <strong id="repeat-value">0%</strong>
+          <span id="repeat-change">Loading</span>
+        </article>
+        <article class="kpi-card">
+          <p>Average delivery time</p>
+          <strong id="delivery-value">0 days</strong>
+          <span id="delivery-change">Loading</span>
+        </article>
+      </section>
+
+      <section class="dashboard-grid" id="analysis">
+        <article class="panel wide-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Monthly performance</p>
+              <h2>Revenue and repeat purchasing</h2>
+            </div>
+            <div class="legend">
+              <span><i class="legend-bar"></i>Revenue</span>
+              <span><i class="legend-line"></i>Repeat rate</span>
+            </div>
+          </div>
+          <div class="chart-shell">
+            <svg id="trend-chart" role="img" aria-label="Monthly revenue and repeat purchase rate chart"></svg>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Customer experience</p>
+              <h2>Support ticket drivers</h2>
+            </div>
+          </div>
+          <div id="ticket-chart" class="horizontal-chart" aria-label="Support ticket drivers"></div>
+        </article>
+
+        <article class="panel insight-panel">
+          <p class="eyebrow">Analyst takeaway</p>
+          <h2 id="takeaway-title">Delivery delays are weakening retention</h2>
+          <p id="takeaway-copy">
+            Returning customers remain the core revenue engine, but slower
+            delivery and more shipping-related tickets are suppressing repeat
+            purchasing in Q4.
+          </p>
+          <div class="impact-box">
+            <span>Estimated annual opportunity</span>
+            <strong id="opportunity-value">$0</strong>
+            <small>if repeat purchase rate improves by 3 percentage points</small>
+          </div>
+        </article>
+      </section>
+
+      <section class="recommendation-section" id="recommendations">
+        <div class="section-heading">
+          <p class="eyebrow">Action plan</p>
+          <h2>Recommended next steps</h2>
+          <p>
+            Prioritized by expected business impact and implementation effort.
+          </p>
+        </div>
+        <div class="recommendation-grid">
+          <article>
+            <span class="priority high">Priority 1</span>
+            <h3>Reduce delivery variance</h3>
+            <p>
+              Create a weekly fulfillment SLA dashboard by region and carrier.
+              Investigate orders delivered after five days.
+            </p>
+            <small>Owner: Operations · Target: 30 days</small>
+          </article>
+          <article>
+            <span class="priority medium">Priority 2</span>
+            <h3>Launch retention outreach</h3>
+            <p>
+              Trigger a service recovery message and incentive for customers
+              affected by late delivery or shipping-related tickets.
+            </p>
+            <small>Owner: CRM Marketing · Target: 45 days</small>
+          </article>
+          <article>
+            <span class="priority medium">Priority 3</span>
+            <h3>Track cohort quality</h3>
+            <p>
+              Compare 60-day repeat rates by acquisition channel before
+              increasing paid campaign budgets.
+            </p>
+            <small>Owner: Growth Analytics · Target: 60 days</small>
+          </article>
+        </div>
+      </section>
+
+      <section class="method-section">
+        <div>
+          <p class="eyebrow">Project scope</p>
+          <h2>What this case study demonstrates</h2>
+        </div>
+        <div class="method-grid">
+          <p><strong>Business framing</strong><br />Translated a broad revenue concern into measurable questions.</p>
+          <p><strong>KPI design</strong><br />Connected revenue, repeat rate, delivery performance, and support demand.</p>
+          <p><strong>Root-cause analysis</strong><br />Identified a plausible operational driver behind retention pressure.</p>
+          <p><strong>Stakeholder communication</strong><br />Converted findings into sequenced, owner-specific actions.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>Created by Charles Zheng</span>
+      <span>Business Analyst Portfolio Project · 2026</span>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
